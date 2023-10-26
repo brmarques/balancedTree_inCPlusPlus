@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <iostream>
 
@@ -71,13 +69,13 @@ void printTree(TreeNode* root, int depth) {
     printTree(root->right, depth + 1);
 
     for (int i = 0; i < depth; i++) {
-        std::cout << "    ";
+        cout << "    ";
     }
 
     if (root->element->isNumber) {
-        std::cout << "N:" << *((int*)root->element->data) << " -->" << std::endl;
+        cout << *((int*)root->element->data) << " -->" << endl;
     } else {
-        std::cout << "S:" << (char*)root->element->data << " -->" << std::endl;
+        cout << (char*)root->element->data << " -->" << endl;
     }
 
     printTree(root->left, depth + 1);
@@ -86,21 +84,21 @@ void printTree(TreeNode* root, int depth) {
 
 int main() {
     int numbers[] = {3, 4, 5};
-    char* letters[] = {"a", "b", "c", "d"};
+    char* letters[] = {"A", "B", "C", "D"};
 
     // Imprimindo os valores do vetor de inteiros
-    cout << "Valores do vetor de inteiros:" << std::endl;
+    cout << "Valores do vetor de inteiros:" << endl;
     for (int i = 0; i < sizeof(numbers) / sizeof(numbers[0]); i++) {
-        std::cout << numbers[i] << " ";
+        cout << numbers[i] << " ";
     }
-    cout << std::endl;
+    cout << endl;
 
     // Imprimindo os valores do vetor de strings
-    cout << "Valores do vetor de strings:" << std::endl;
+    cout << "Valores do vetor de strings:" << endl;
     for (int i = 0; i < sizeof(letters) / sizeof(letters[0]); i++) {
-        std::cout << letters[i] << " ";
+        cout << letters[i] << " ";
     }
-    cout << std::endl;
+    cout << endl;
 
     // Combinar as duas listas em uma única lista de elementos
     int numCount = sizeof(numbers) / sizeof(numbers[0]);
@@ -126,12 +124,12 @@ int main() {
     qsort(combinedList, totalCount, sizeof(struct Element*), compareElements);
 
     // Imprimir os valores da lista combinada
-    std::cout << "Valores da lista combinada ordenada:" << std::endl;
+    cout << "Valores da lista combinada ordenada:" << endl;
     for (int i = 0; i < totalCount; i++) {
         if (combinedList[i]->isNumber) {
-            std::cout << "Número: " << *((int*)combinedList[i]->data) << std::endl;
+            cout << "Número: " << *((int*)combinedList[i]->data) << endl;
         } else {
-            std::cout << "String: " << (char*)combinedList[i]->data << std::endl;
+            cout << "String: " << (char*)combinedList[i]->data << endl;
         }
     }
 
