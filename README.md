@@ -1,4 +1,4 @@
-# balancedTree_inCplusplus
+# Balanced Tree in C++
 
 Desenvolvimento de um algoritmo para busca em árvores balanceadas
 
